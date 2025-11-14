@@ -8,18 +8,13 @@ import pandas as pd
 import numpy as np
 import os
 
-# -----------------------------------
-# Streamlit Page Config
-# -----------------------------------
 st.set_page_config(
     page_title="YOLOv8 Vehicle Counter", 
     layout="wide",
     page_icon="🚗"
 )
 
-# -----------------------------------
-# Global Variables for Tracking
-# -----------------------------------
+
 class VehicleCounter:
     def __init__(self):
         self.data_deque = {}
@@ -34,9 +29,7 @@ class VehicleCounter:
         self.leaving_count = Counter()
         self.unique_ids = set()
 
-# -----------------------------------
-# Helper Functions
-# -----------------------------------
+
 def get_color_for_class(class_name):
     """Assign colors to vehicle classes"""
     colors = {
@@ -190,9 +183,7 @@ def draw_count_overlay(frame, counter, fps=0):
     cv2.addWeighted(overlay, 0.6, frame, 0.4, 0, frame)
     return frame
 
-# -----------------------------------
-# Sidebar Navigation
-# -----------------------------------
+
 st.sidebar.title("🚗 Navigation")
 page = st.sidebar.radio(
     "Go to",
@@ -201,9 +192,7 @@ page = st.sidebar.radio(
 
 st.sidebar.markdown("---")
 
-# -----------------------------------
-# HOME PAGE
-# -----------------------------------
+
 if page == "🏠 Home":
     st.markdown("""
     <h1 style='text-align:center; color: #1E88E5;'>🚗 YOLOv8 Vehicle Tracking & Counting System</h1>
