@@ -15,4 +15,7 @@ scikit-learn>=0.24.0
 streamlit>=1.10.0
 torch
 pillow
+torch --index-url https://download.pytorch.org/whl/cpu
+filterpy
+
 
