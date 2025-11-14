@@ -435,7 +435,7 @@ elif page == "🎯 Tracking & Counting":
                 
                 frame_count += 1
                 
-                results = model.track(frame, persist=True, conf=conf_thresh, verbose=False)
+                results = model.track(frame, tracker="sort", persist=True, conf=conf_thresh, verbose=False)
                 frame, counter = process_tracking(frame, results, model, counter, 
                                                  line_coords, line_orientation, show_trails)
                 
@@ -902,3 +902,4 @@ st.markdown("""
     </p>
 </div>
 """, unsafe_allow_html=True)
+
